@@ -1,0 +1,16 @@
+[project]
+name = "llm-ft-ollama"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.12.0",
+    "bitsandbytes>=0.49.0",
+    "gguf>=0.17.1",
+    "llama-cpp-python>=0.3.16",
+    "peft>=0.18.0",
+    "trl>=0.24.0",
+    "unsloth>=2025.12.5",
+    "unsloth-zoo>=2025.12.4",
+]

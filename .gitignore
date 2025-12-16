@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Tools
+llama.cpp
+
+# Data
+*.json
+
+# Code output
+lora_output/
+outputs/
+unsloth_compiled_cache/
+merged_model/
+
+# Model files
+*.gguf
