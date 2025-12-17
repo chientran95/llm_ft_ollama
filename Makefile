@@ -4,24 +4,24 @@ SHELL := /bin/bash
 PROJECT_DIR := $(shell pwd)
 VENV_NAME := .venv
 
-help:
+help: ## Show help
 	@echo "Makefile commands:"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-20s - %s\n", $$1, $$2}'
 
-setup:
+setup: ## Setup the development environment
 	uv venv $(VENV_NAME) --python python3.12
 	uv sync
 
-install:
+install: ## Install dependencies
 	uv sync
 
-train:
+train: ## Train the LoRA
 	uv run train.py
 
-merge:
+merge: ## Merge LoRA into base model
 	uv run merge_lora.py
 
-ollama-create:
+ollama-create: ## Create Ollama model
 	@echo "Creating Ollama model..."
 	@if [ ! -d "llama.cpp" ]; then \
 		echo "Cloning llama.cpp..."; \
